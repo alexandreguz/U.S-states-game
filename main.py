@@ -28,10 +28,14 @@ while len(correct_states_list) < 50:
 
 
 # creating a csv file with those states that were forgotten:
-list_forgotten_states = []
-for state in states_list:
-    if state not in correct_states_list:
-        list_forgotten_states.append(state)
+# list_forgotten_states = []
+# for state in states_list:
+#     if state not in correct_states_list:
+#         list_forgotten_states.append(state)
+
+
+list_forgotten_states = [state for state in states_list if state not in correct_states_list]
+
 states_lo_learn = {
     "learn" : list_forgotten_states
 }
